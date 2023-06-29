@@ -1,0 +1,188 @@
+:root{
+    --border-color-input: #ced4da;
+    --blue-color: #007bff;
+    --shadow-blue-color: #0059b8;
+    --white-color: #ffffff;
+    --red-color:  #ff0000;
+    --shadow-red-color:  #af0d0d;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+h1{
+    padding: 30px 0px;
+    font-size: 45px;
+
+}
+
+.menu {
+    background: var(--blue-color);
+    width: 100%;
+    height: 70px;
+
+}
+
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    padding-top: 15px;
+    flex-wrap: wrap;
+}
+
+.container ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+
+}
+
+.container ul li{
+    padding: 8px 5px;
+
+}
+
+.container ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.style-inputs{
+    margin-right: 30px;
+    border-radius: 3px;
+    border: 1px solid var(--border-color-input);
+    font-size: 16px;
+    padding: 8px;
+    width: 90%;
+}
+
+.input-text-size{
+    padding: 8.5px;
+
+}
+
+#year,
+#month{
+    flex: 15%;
+}
+
+#day{
+    flex: 20%;
+}
+
+#type{
+    flex: 50%;
+}
+
+#description{
+    flex: 60%;
+}
+
+#value{
+    flex: 20%;
+}
+
+
+#button {
+    flex: 10%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
+}
+
+.button-style{
+    width: 40px;
+    height: 40px;
+    background: var(--blue-color);
+    color: var(--white-color);
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 5px;
+    
+}
+
+.button-remove {
+    width: 30px;
+    height: 30px;
+    background: var(--red-color);
+    color: var(--white-color);
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 1px;
+}
+
+input:focus,
+select:focus{
+    box-shadow: 0px 0px 4px 4px var(--blue-color);
+    outline: none;
+}
+
+.button-style:hover{
+    background-color: var(--shadow-blue-color);
+    transition: all 100ms ease-in-out;
+}
+
+.button-remove:hover{
+    background-color: var(--shadow-red-color);
+    transition: all 100ms ease-in-out;
+}
+
+/* FORMULÁRIO DE CONSULTA */
+
+.responsive-table {
+    width: 100%;
+    overflow-x: scroll;
+    margin-right: 60px;
+}
+
+table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+
+th, tr {
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid var(--border-color-input);
+    border-bottom: 1px solid var(--border-color-input);
+}
+
+tr {
+    font-weight: 300;
+}
+
+td {
+    padding: 10px ;
+}
+
+
+.colspan-footer {
+    text-align: right;
+}
+
+
+@media (max-width : 450px){
+
+#year,
+#month,
+#day,
+#type,
+#description,
+#value{
+    flex: 100%;
+
+}
+
+}
+

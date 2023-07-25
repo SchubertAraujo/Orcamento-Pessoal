@@ -1,8 +1,4 @@
-import { DataBase } from "./dataBase.js"
-
-document.getElementById('clickButton').addEventListener('click', expensesRegister)
-document.getElementById('searchButton').addEventListener('click', searchExpenses)
-document.getElementById('onLoadExpenses').addEventListener('load', loadListExpenses)
+import { DataBase } from "./dataBase.js" 
 
 let database = new DataBase();
 
@@ -59,6 +55,10 @@ class Expenses{
     }
 }
 
+document.getElementById('clickButton')?.addEventListener('click', expensesRegister)
+document.getElementById('searchButton')?.addEventListener('click', searchExpenses)
+
+
 function cleanFields(){
     year.value = ""
     month.value= ""
@@ -98,46 +98,50 @@ function expensesRegister() {
     }
 }
 
-function insertValuesInRow(expenses){
-    var expensesList = document.getElementById('expensesList')
-    let sumExpenses = 0
-    expensesList != null && expenses.forEach(e => {
-        var row = expensesList.insertRow()
-        sumExpenses += Number(e.expensesValue)
-        row.insertCell(0).innerHTML = `${e.day}/${e.month}/${e.year}`
-        row.insertCell(1).innerHTML = e.type
-        row.insertCell(2).innerHTML = e.description
-        row.insertCell(3).innerHTML = Number(e.expensesValue).toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})
-        let removeButton = document.createElement("button")
-        removeButton.className = "button-remove style-inputs"
-        removeButton.innerHTML = "x"
-        removeButton.id = `id_${e.id}`
-        removeButton.onclick = () => {
-            database.remove(e.id)
-            window.location.reload()
-        }
-        row.insertCell(4).append(removeButton) 
-       
-    });
-    let sumExpensesFooter = document.getElementById('sumExpensesFooter')
-    rowFooter = sumExpensesFooter.insertRow()
-   
-    rowFooter.insertCell(0).innerHTML = ''
-    rowFooter.insertCell(1).innerHTML = ''
-    rowFooter.insertCell(2).innerHTML = 'Soma:'
-    rowFooter.insertCell(3).innerHTML = sumExpenses.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})
-
-}
-
-function loadListExpenses(){
+    document.addEventListener('DOMContentLoaded', function loadListExpenses(){
     var expenses = Array()
     expenses = database.getAllRecords();
 
     insertValuesInRow(expenses)
+})
+
+export function insertValuesInRow(expenses){
+
+    var expensesList = document.getElementById('expensesList')
+    let sumExpenses = 0
+    if (expensesList !== null) {
+        expenses.forEach(e => {
+            var row = expensesList.insertRow()
+            sumExpenses += Number(e.expensesValue)
+            row.insertCell(0).innerHTML = `${e.day}/${e.month}/${e.year}`
+            row.insertCell(1).innerHTML = e.type
+            row.insertCell(2).innerHTML = e.description
+            row.insertCell(3).innerHTML = Number(e.expensesValue).toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})
+            let removeButton = document.createElement("button")
+            removeButton.className = "button-remove style-inputs"
+            removeButton.innerHTML = "x"
+            removeButton.id = `id_${e.id}`
+            removeButton.onclick = () => {
+                database.remove(e.id)
+                window.location.reload()
+            }
+            row.insertCell(4).append(removeButton) 
+           
+        });
+        // let sumExpensesFooter = document.getElementById('sumExpensesFooter')
+    //     let rowFooter = sumExpensesFooter.insertRow()
+       
+    //     rowFooter.insertCell(0).innerHTML = ''
+    //     rowFooter.insertCell(1).innerHTML = ''
+    //     rowFooter.insertCell(2).innerHTML = 'Soma:'
+    //     rowFooter.insertCell(3).innerHTML = sumExpenses.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})
+    document.getElementById('totalValue').innerHTML = sumExpenses.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})
+    }
 }
 
 
 function searchExpenses(){
+   
     let year = document.getElementById("year-select").value
     let month= document.getElementById("month-select").value
     let day = document.getElementById("day-input").value
@@ -155,4 +159,3 @@ function searchExpenses(){
     
     database.search(expenses)
 }
-

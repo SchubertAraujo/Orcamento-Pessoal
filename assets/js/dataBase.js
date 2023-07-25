@@ -1,3 +1,4 @@
+import { insertValuesInRow } from './expenses.js'
 export class DataBase{
 
     constructor(){
@@ -40,7 +41,7 @@ export class DataBase{
     remove(id){
         localStorage.removeItem(id)
     }
-    
+
     search(expenses){    
         let expensesArray = Array()
         expensesArray = this.getAllRecords();
@@ -74,7 +75,6 @@ export class DataBase{
                 return filter.expensesValue == expenses.expensesValue
         })}
 
-        insertValuesInRow(expensesFiltered)
-    
+        insertValuesInRow(expensesFiltered)   
     }
 }

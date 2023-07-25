@@ -7,6 +7,7 @@
     <title>Orçamento pessoal</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="assets/js/utils.js"></script>
+    
 </head>
 <body id="onLoadExpenses">
     <header class="menu">
@@ -82,7 +83,7 @@
                 <thead>
                     <tr>
                         <th>Data</th>
-                        <th>Descrição</th>
+                        <th>Tipo</th>
                         <th>Descrição</th>
                         <th>Valor</th>
                         <th></th>
@@ -92,11 +93,15 @@
 
                 </tbody>
                 <tfoot id="sumExpensesFooter"> 
-
+                    <th></th>
+                    <th></th>
+                    <th>Soma:</th>
+                    <th id="totalValue"></th>
                 </tfoot>
             </table>
         </div>
     </section>
+    
 </body>
 <script type="module" src="assets/js/expenses.js"></script>
 </html>

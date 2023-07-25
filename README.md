@@ -16,6 +16,7 @@
 - importar um arquivo js em outro, ao tentar carregar deu erro 404
 	- resolvido ao colocar "type='module'" na chamda do script
 <img src="https://github.com/SchubertAraujo/Orcamento-Pessoal/blob/main/imgsReadme/module.png" alt="imagem da alteração feita">
+
 - onclick nao acha a funçao que está como "type='module'"
   - resolvido ao usar usar a manipulação da DOM com getElement e addListener
 <img src="https://github.com/SchubertAraujo/Orcamento-Pessoal/blob/main/imgsReadme/buttonClick.png" alt="imagem da alteração feita">

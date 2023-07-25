@@ -1,5 +1,5 @@
 <h1 align='center'> Orçamento pessoal </h1>
-<p align="justify">Projeto de orçamento pessoal como desafio de curso da udemy, para demostrar os conhecimentos</p>
+<p align="justify">Projeto de orçamento pessoal com webstorage como desafio de curso da udemy, para demostrar os conhecimentos</p>
 
 <img src="https://img.shields.io/static/v1?label=%20&message=JavaScript&color=yellow&labelColor=575757&style=flat&logo=javascript" /> <img src="https://img.shields.io/static/v1?label=%20&message=Html&color=orange&labelColor=575757&style=flat&logo=html5"/> <img src="https://img.shields.io/static/v1?label=%20&message=Css&color=blue&labelColor=575757&style=flat&logo=css3"/> <img src="https://img.shields.io/static/v1?label=%20&message=WebStorage&color=a22aa8&labelColor=a22aa8&style=flat&"/> <img src="https://img.shields.io/static/v1?label=%20&message=Json&color=cf1140&labelColor=4f4a4b&style=flat&logo=json"/>
 ## PREVIEW
